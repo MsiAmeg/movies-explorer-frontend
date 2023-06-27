@@ -1,0 +1,62 @@
+.landing-title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    align-self: stretch;
+    margin: 110px 70px 0;
+    padding: 0 0 23px 0;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    border-bottom: 1px solid #DADADA;
+}
+
+.landing-title_techs {
+    margin: 100px 70px 0;
+}
+
+.landing-title_portfolio {
+    margin: 0 auto 50px 70px;
+    padding: 0;
+    color: #A0A0A0;
+    border: none;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .landing-title {
+        margin: 91px 50px 0;
+        padding: 0 0 23px 0;
+    }
+
+    .landing-title_portfolio {
+        margin: 0 auto 48px 50px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .landing-title {
+        font-size: 18px;
+        line-height: 21.78px;
+        margin: 70px 18px 0;
+        padding: 0 0 28px 0;
+    }
+
+    .landing-title_techs {
+        border-bottom: 1px solid black;
+    }
+
+    .landing-title_about-me {
+        margin: 70px 14px 0;
+    }
+
+    .landing-title_portfolio {
+        margin: 0 auto 40px 14px;
+        padding: 0;
+        font-size: 14px;
+    }
+}
