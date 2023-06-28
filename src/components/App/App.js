@@ -6,6 +6,8 @@ import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/SavedMovies.js';
 import ProtectedRoute from '../../utils/ProtectedRoute.js';
 import Profile from '../Profile/Profile.js';
+import Register from '../Register/Register.js';
+import Login from '../Login/Login.js';
 import './App.css';
 
 function App () {
@@ -24,6 +26,8 @@ function App () {
         <LoginContext.Provider value={{loggedIn, userLoggined, signOut}}>
             <div className='container'>
                 <Routes>
+                    <Route path='/sign-in' element={<Login />} />
+                    <Route path='/sign-up' element={<Register />} />
                     <Route path='/' element={<Main />} />
                     <Route path='/movies' element={<ProtectedRoute element={Movies}></ProtectedRoute>} />
                     <Route path='/saved-movies' element={<ProtectedRoute element={SavedMovies}></ProtectedRoute>} />

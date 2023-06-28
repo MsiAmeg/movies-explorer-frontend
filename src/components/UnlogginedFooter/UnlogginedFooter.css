@@ -1,0 +1,24 @@
+.unloggined-footer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.unloggined-footer__link {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 14px;
+    color: #4285F4;
+}
+
+.unloggined-footer__span {
+    color: #8B8B8B;
+}
+
+@media screen and (max-width: 400px) {
+    .unloggined-footer__link {
+        font-size: 12px;
+    }
+}
