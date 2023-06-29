@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { LoginContext } from "../../contexts/LoginContext.js";
 import logo from '../../images/logo.svg';
@@ -6,25 +6,30 @@ import accountIcon from '../../images/account.svg';
 import './Header.css';
 
 function Header () {
+    const navigate = useNavigate();
 
     const [isExtended, setExtended] = useState(false);
 
     const { loggedIn, userLoggined, signOut } = useContext(LoginContext);
 
-    const menuToggle= () => {
+    const menuToggle = ()=> {
         setExtended(!isExtended);
+    }
+
+    const goLanding = ()=> {
+        navigate('/');
     }
 
     return (
         <header className='header'>
-            <img src={logo} alt="логотип" className="header__logo"/>
+            <img src={logo} alt="логотип" onClick={goLanding} className="header__logo"/>
             <button onClick={menuToggle} aria-label='кнопка меню'
                 className={`header__menu-button ${isExtended ? "header__menu-button_active" : ""}`}
             />
             {isExtended && <div className='header__navigation-background'></div>}
             <nav className={`header__navigation ${isExtended ? "header__navigation_visible" : ""}`} >
                 <ul className='header__navigation__movies'>
-                        <li className='header__navigation__movies__item_landing header__navigation__movies__item_landing'>
+                        <li className='header__navigation__movies__item header__navigation__movies__item_landing'>
                             <NavLink
                                 className={({ isActive }) =>
                                 isActive ? 'header__link header__link_landing header__link_active hover' : 'header__link header__link_landing hover'
@@ -53,7 +58,7 @@ function Header () {
                         </NavLink>
                     </li>
                 </ul>
-                <Link className='header__link header__link_account hover' to="/account">
+                <Link className='header__link header__link_account hover' to="/profile">
                     Аккаунт
                     <img src={accountIcon} alt='иконка аккаунта' className='header__link__image'></img>
                 </Link>

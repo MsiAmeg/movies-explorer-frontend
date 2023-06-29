@@ -12,8 +12,8 @@ function LandingHeader () {
         <header className='landing-header'>
             <img src={logo} alt="логотип" className="landing-header__logo"/>
             <nav className='landing-header__navigation'>
-                <Link className='landing-header__link hover' to="*">Регистрация</Link>
-                <Link onClick={userLoggined} className='landing-header__link landing-header__link_login hover' to="*">Войти</Link>
+                <Link className='landing-header__link hover' to="/signup">Регистрация</Link>
+                <Link onClick={userLoggined} className='landing-header__link landing-header__link_login hover' to="/signin">Войти</Link>
             </nav>
         </header>
     );

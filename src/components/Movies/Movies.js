@@ -5,6 +5,8 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 import './Movies.css';
 
 function Movies () {
+
+
     return (
         <>
             <Header />

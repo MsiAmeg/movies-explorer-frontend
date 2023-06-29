@@ -1,4 +1,4 @@
-.unloggined__form {
+.unloggined {
     margin: 0 0 17px;
     padding: 0;
     display: flex;
@@ -32,8 +32,22 @@
     outline: none;
 }
 
+.unloggined__input::placeholder {
+    transform: scale(0);
+}
+
+.unloggined__input:focus-visible {
+    border-bottom: 1px solid #4285F4;
+    color: #EE3465;
+}
+
+
 .unloggined__input:invalid {
     color: #EE3465;
+}
+
+.unloggined__input:valid {
+    color: #4285F4;
 }
 
 .unloggined__error {
