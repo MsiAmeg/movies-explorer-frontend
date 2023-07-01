@@ -1,13 +1,14 @@
 .unloggined-header {
     margin: 0;
     padding: 0;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .unloggined-header__container {
-    margin: 70px 0 42px;
+    margin: auto 0 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -32,16 +33,19 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .unloggined-header__container {
-        margin: 233px 0 40px;
-        gap: 41px;
+    .unloggined-header {
+        height: 33vh;
     }
 }
 
 @media screen and (max-width: 540px) {
+    .unloggined-header {
+        height: 32.5vh;
+    }
+
     .unloggined-header__container {
         min-width: 260px;
-        margin: 56px 0 80px;
+        margin: 56px 0 0;
         gap: 51px;
         align-items: center;
     }

@@ -16,7 +16,7 @@
   gap: 26px 40px;
 }
 
-.about__stages__title {
+.about__title {
   padding: 0;
   margin: 0;
   font-size: 20px;
@@ -27,7 +27,7 @@
   color: white;
 }
 
-.about__stages__description {
+.about__description {
   padding: 0;
   margin: 0;
   font-size: 14px;
@@ -52,7 +52,7 @@
   box-sizing: border-box;
 }
 
-.about__time__data {
+.about__data {
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -63,16 +63,16 @@
   box-sizing: border-box;
 }
 
-.about__time__data:nth-of-type(1) {
+.about__data:nth-of-type(1) {
   background: #3DDC84;
   color: black;
 }
 
-.about__time__data:nth-of-type(3) {
+.about__data:nth-of-type(3) {
     color: white;
   }
 
-.about__time__description {
+.about__stack {
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
@@ -87,14 +87,14 @@
         gap: 23px 30px;
     }
 
-    .about__stages__description {
+    .about__description {
         font-size: 12px;
         line-height: 18px;
     }
 
     .about__time {
         grid-template-columns: 21% 79%;
-        margin: 0 50px 90px;
+        margin: 0 50px 81px;
     }
 }
 
@@ -107,16 +107,16 @@
         grid-auto-flow: row;
     }
 
-    .about__stages__title {
+    .about__title {
         font-size: 18px;
         line-height: 21.78px;
     }
 
-    .about__stages__title:last-of-type {
+    .about__title:last-of-type {
         padding: 40px 0 0 0;
     }
 
-    .about__stages__description {
+    .about__description {
         font-size: 11px;
         line-height: 16px;
     }
@@ -127,13 +127,13 @@
         gap: 0;
     }
 
-    .about__time__data {
+    .about__data {
         font-size: 11px;
         line-height: 13.31px;
         padding: 11px 10px;
     }
 
-    .about__time__description {
+    .about__stack {
         font-size: 11px;
         font-weight: 400;
         line-height: 12.71px;

@@ -3,10 +3,9 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+    align-items: center;
+    width: 80%;
     min-height: 379px;
-    max-width: 396px;
     gap: 14px;
 }
 
@@ -17,6 +16,7 @@
     flex-direction: column;
     color: #8B8B8B;
     font-size: 10px;
+    min-width: 396px;
 }
 
 .unloggined__input {
@@ -30,10 +30,6 @@
     border-bottom: 1px solid #8B8B8B;
     background: transparent;
     outline: none;
-}
-
-.unloggined__input::placeholder {
-    transform: scale(0);
 }
 
 .unloggined__input:focus-visible {
@@ -63,10 +59,9 @@
 }
 
 .unloggined__button {
-    margin: 0;
-    padding: 14px 0 15px;
     margin: auto 0 0;
-    width: 100%;
+    padding: 14px 0 15px;
+    width: 38.6%;
     color: white;
     text-align: center;
     font-size: 14px;
@@ -76,7 +71,28 @@
     border: none;
 }
 
+.unloggined__button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .unloggined {
+        min-height: 378px;
+    }
+    .unloggined__button {
+        width: 64.7%;
+    }
+}
+
 @media screen and (max-width: 400px) {
+    .unloggined {
+        margin: 0 0 15px;
+        min-height: 467px;
+    }
+
+    .unloggined__label {
+        min-width: 260px;
+    }
     .unloggined__form {
         margin: 0 0 15px;
         max-width: 260px;
@@ -84,7 +100,9 @@
     }
 
     .unloggined__button {
+        width: 100%;
         padding: 16px 0 15px;
         font-size: 12px;
+        justify-self: flex-end;
     }
 }

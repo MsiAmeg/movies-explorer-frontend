@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom';
 import UnlogginedForm from '../UnlogginedForm/UnlogginedForm.js';
 import UnlogginedHeader from '../UnlogginedHeader/UnlogginedHeader.js';
 import './Login.css';
-import UnlogginedFooter from '../UnlogginedFooter/UnlogginedFooter.js';
 
 function Login () {
     return (
@@ -11,7 +11,7 @@ function Login () {
                 <UnlogginedForm btnText='Войти'>
                     <label className='unloggined__label'>
                         E-mail
-                        <input className='unloggined__input' placeholder='почта' name='email' required minLength={2} />
+                        <input className='unloggined__input' placeholder='почта' name='email' type='email' required minLength={2} />
                         <span className='unloggined__error'>Что-то пошло не так...</span>
                     </label>
                     <label className='unloggined__label'>
@@ -20,8 +20,12 @@ function Login () {
                         <span className='unloggined__error unloggined__error_visible'>Что-то пошло не так...</span>
                     </label>
                 </UnlogginedForm>
+                <Link className='login__link hover' to='/signup'>
+                    <span className='login__span'>
+                        Ещё не зарегистрированы?
+                    </span> Регистрация
+                </Link>
             </main>
-            <UnlogginedFooter spanTxt='Ещё не зарегистрированы?' linkTxt=' Регистрация' linkUrl='/signup' />
         </>
     );
 }

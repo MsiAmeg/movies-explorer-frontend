@@ -1,4 +1,4 @@
-import LandingHeader from '../LandingHeader/LandingHeader.js';
+import Header from '../Header/Header.js';
 import Promo from '../Promo/Promo.js';
 import About from '../About/About.js';
 import Techs from '../Techs/Techs.js';
@@ -10,8 +10,8 @@ import './Main.css';
 function Main () {
     return (
         <>
-            <LandingHeader />
-            <main>
+            <Header />
+            <main className='main'>
                 <Promo />
                 <About />
                 <Techs />

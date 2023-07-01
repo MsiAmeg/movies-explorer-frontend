@@ -5,7 +5,7 @@ import {Navigate} from 'react-router-dom';
     const { loggedIn } = useContext(LoginContext);
 
     return (
-        loggedIn ? <Component {...props} /> : <Navigate to="/login-in" replace/>
+        loggedIn ? <Component {...props} /> : <Navigate to="/signin" replace/>
     );
  }
 

@@ -4,11 +4,11 @@ import './Footer.css';
 function Footer () {
     return (
         <footer className='footer'>
-            <p className='footer__description'>
+            <h3 className='footer__title'>
                 Учебный проект Яндекс.Практикум х BeatFilm.
-            </p>
+            </h3>
             <div className='footer__info'>
-                <p className='footer__info__copyright'>© 2020</p>
+                <p className='footer__copyright'>© 2020</p>
                 <nav className='footer__links'>
                     <Link to='https://practicum.yandex.ru' target='_blank' className='footer__link hover'>Яндекс.Практикум</Link>
                     <Link to='https://github.com/MsiAmeg/movies-explorer-frontend' target='_blank' className='footer__link hover'>Github</Link>

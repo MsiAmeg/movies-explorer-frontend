@@ -19,7 +19,8 @@ function MoviesCardList ({ isSaved }) {
             </div>
             {isCardsLoading && <Preloader />}
             <div className={`movies-card-list__more-films ${isSaved ? "movies-card-list__more-films_ended" : ""}`}>
-                <button className='movies-card-list__more-films__button hover'>Ещё</button>
+                <button className='movies-card-list__button hover'
+                aria-label='загрузить еще' type='button'>Ещё</button>
             </div>
         </section>
     );

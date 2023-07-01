@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { LoginContext } from '../../contexts/LoginContext.js';
 import { CardsContext } from '../../contexts/CardsContext.js';
 import Main from '../Main/Main.js';
@@ -14,11 +14,14 @@ import './App.css';
 
 function App () {
 
-    const [loggedIn, setLoggedIn] = useState(true);
+    const navigate = useNavigate();
+
+    const [loggedIn, setLoggedIn] = useState(false);
     const [cards, setCards] = useState([]);
 
     const userLoggined = () => {
         setLoggedIn(true);
+        navigate('/movies');
     }
 
     const signOut = () => {
