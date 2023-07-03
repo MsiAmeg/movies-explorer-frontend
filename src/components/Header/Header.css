@@ -1,0 +1,222 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    width: 100%;
+    min-height: 74px;
+}
+
+.header__logo {
+    margin: 0 0 0 70px;
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    background-image: url(../../images/logo.svg);
+    min-width: 38px;
+    min-height: 38px;
+}
+
+.header__menu-button {
+    display: none;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: url(../../images/header-button-open.svg);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header__navigation-background {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .3);
+}
+
+.header__navigation {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 70px 0 0;
+    transition: transform 350ms ease-in-out;
+}
+
+.header__movies {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.header__item {
+    margin: 0;
+    padding: 0;
+    transition: all 350ms ease-in-out;
+}
+
+.header__item_landing {
+    display: none;
+}
+
+.header__link {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #fff;
+}
+
+.header__link_active {
+    box-sizing: border-box;
+    padding: 0 0 4px 0;
+    border-bottom: 2px solid white;
+}
+
+.header__link_account {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    align-self: flex-end;
+    font-size: 14px;
+}
+
+.header__link_saved-films {
+    font-weight: normal;
+}
+
+.header__account-image {
+    max-width: 26px;
+    max-height: 30px;
+    border-radius: 4px;
+    background: #313131;
+    margin: 0;
+    padding: 8px 7.25px;
+}
+
+@media screen and (max-width: 1024px) {
+    .header__logo {
+        margin: 0 0 0 30px;
+    }
+
+    .header__navigation {
+        margin: 0 30px 0 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .header__navigation {
+        position: fixed;
+        inset: 0 0 0 32%;
+        width: auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-items: center;
+        margin: 0;
+        background: #202020;
+        padding: 0;
+        transform: translateX(100%);
+        z-index: 10;
+    }
+
+    .header__navigation_visible {
+        transform: translateX(0);
+    }
+
+    .header__navigation-background {
+        display: block;
+    }
+
+    .header__movies {
+        margin: 161px 0 0;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .header__item_landing {
+        display: block;
+    }
+
+    .header__menu-button {
+        display: block;
+        padding: 0;
+        margin: 0 30px 0 0;
+        z-index: 11;
+    }
+
+    .header__menu-button_active {
+        background-image: url(../../images/header-button-close.svg);
+        width: 32px;
+        height: 32px;
+        margin: 0 22px 0 0;
+        transition: all 200ms ease-in-out;
+    }
+
+    .header__link_account {
+        align-self: center;
+        justify-items: stretch;
+        margin: 0 0 90px 0;
+    }
+
+    .header__link {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__logo {
+        margin: 0 0 0 14px;
+    }
+
+    .header__menu-button {
+        margin: 0 14px 0 0;
+        width: 41px;
+        height: 36px;
+    }
+    
+    .header__menu-button_active {
+        margin: 0 14px 0 0;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-8px);
+    }
+
+    .header__movies {
+        margin: 147px 0 0;
+        gap: 28px;
+    }
+
+    .header__link_active {
+        padding: 0 0 7px 0;
+    }
+
+    .header__link_account {
+        margin: 0 0 48px 0;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .header__navigation {
+        gap: 15px;
+        inset: 0;
+    }
+}
+
+@keyframes slideaway {
+    from { display: block; }
+    to { transform: translateY(40px); opacity: 0;}
+  }

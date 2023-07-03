@@ -1,0 +1,141 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #202020;
+}
+
+.about__stages {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  margin: 70px 70px 110px 70px;
+  padding: 0;
+  gap: 26px 40px;
+}
+
+.about__title {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: white;
+}
+
+.about__description {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+.about__time {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  justify-items: stretch;
+  text-align: center;
+  margin: 0 70px 100px;
+  padding: 0;
+  gap: 5px 0;
+  box-sizing: border-box;
+}
+
+.about__data {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  margin: 0;
+  padding: 9px 14px;
+  background: #303030;
+  box-sizing: border-box;
+}
+
+.about__data:nth-of-type(1) {
+  background: #3DDC84;
+  color: black;
+}
+
+.about__data:nth-of-type(3) {
+    color: white;
+  }
+
+.about__stack {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #8B8B8B;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .about__stages {
+        margin: 70px 50px 92px;
+        gap: 23px 30px;
+    }
+
+    .about__description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about__time {
+        grid-template-columns: 21% 79%;
+        margin: 0 50px 81px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .about__stages {
+        margin: 60px 18px 60px;
+        gap: 16px;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+    }
+
+    .about__title {
+        font-size: 18px;
+        line-height: 21.78px;
+    }
+
+    .about__title:last-of-type {
+        padding: 40px 0 0 0;
+    }
+
+    .about__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about__time {
+        grid-template-columns: 35% 65%;
+        margin: 0 18px 60px;
+        gap: 0;
+    }
+
+    .about__data {
+        font-size: 11px;
+        line-height: 13.31px;
+        padding: 11px 10px;
+    }
+
+    .about__stack {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 12.71px;
+    }
+}
