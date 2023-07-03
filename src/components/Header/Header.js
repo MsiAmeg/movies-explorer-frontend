@@ -1,6 +1,6 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import { LoginContext } from "../../contexts/LoginContext.js";
+import { LoginContext } from "../../contexts/Login.js";
 import LandingHeader from "../LandingHeader/LandingHeader.js";
 import accountIcon from '../../images/account.svg';
 import './Header.css';

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { LoginContext } from "../../contexts/LoginContext.js";
+import { LoginContext } from "../../contexts/Login.js";
 import logo from '../../images/logo.svg';
 import './LandingHeader.css';
 

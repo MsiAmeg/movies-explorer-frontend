@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { LoginContext } from '../../contexts/LoginContext.js';
-import { CardsContext } from '../../contexts/CardsContext.js';
+import { LoginContext } from '../../contexts/Login.js';
+import { CurrentUserContext } from '../../contexts/CurrentUser.js';
+import { CardsContext } from '../../contexts/Cards.js';
 import Main from '../Main/Main.js';
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/SavedMovies.js';
@@ -14,10 +15,12 @@ import './App.css';
 
 function App () {
 
-    const navigate = useNavigate();
-
+    
     const [loggedIn, setLoggedIn] = useState(false);
+    const [currentUser, setCurrentUser] = useState({ name: '', email: '', _id: '', });
     const [cards, setCards] = useState([]);
+
+    const navigate = useNavigate();
 
     const userLoggined = () => {
         setLoggedIn(true);

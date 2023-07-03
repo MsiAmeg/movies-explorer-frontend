@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { LoginContext } from "../../contexts/LoginContext.js";
+import { LoginContext } from "../../contexts/Login.js";
 import './UnlogginedForm.css';
 
-function UnlogginedForm({ btnText, children }) {
+function UnlogginedForm({ isValid, btnText, children }) {
 
     const { userLoggined } = useContext(LoginContext);
 
@@ -10,7 +10,8 @@ function UnlogginedForm({ btnText, children }) {
         <>
             <form className='unloggined' onSubmit={userLoggined}>
                 {children}
-                <button type="submit" className="unloggined__button hover" aria-label="сохранение изменений">{btnText}</button>
+                <button type="submit" className="unloggined__button hover"
+                aria-label="сохранение изменений" disabled={!isValid}>{btnText}</button>
             </form>
         </>
     );
