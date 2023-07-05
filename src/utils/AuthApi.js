@@ -10,14 +10,17 @@ class AuthApi {
 
     _renderResponse(res) {
         if (res.ok) return res.json();
+
+        return Promise.reject(`Ошибка: ${res.status}`);
     }
 
-    registration(email, password) {
+    registration(name, email, password) {
         return this._request(`${this._url}/signup`, {
             method: 'POST',
             credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
+                name,
                 email,
                 password
             })
@@ -54,7 +57,8 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-    url: "https://api.rekunir.diplom.nomoredomains.rocks",
+    // url: "https://api.rekunir.diplom.nomoredomains.rocks",
+    url: "http://localhost:3001",
     headers: {
       'Content-Type': 'application/json',
     }

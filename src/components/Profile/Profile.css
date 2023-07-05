@@ -77,6 +77,19 @@
     cursor: pointer;
 }
 
+.profile__button_submit {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px;
+    background: #3456F3;
+    border-radius: 3px;
+}
+
+.profile__button_submit:disabled {
+    background: #868b95;
+    cursor: not-allowed;
+}
+
 .profile__link-logout {
     margin: 0;
     padding: 0;
