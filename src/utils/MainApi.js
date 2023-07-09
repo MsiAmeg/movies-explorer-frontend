@@ -16,27 +16,47 @@ class MainApi {
       return Promise.reject(`Ошибка: ${res.status}`);
     }
   
-    getInitialCards() {
-      return this._request(`${this._url}/cards`, {
+    getInitialMovies() {
+      return this._request(`${this._url}/movies`, {
         credentials: 'include',
         headers: this._headers
       })
     }
   
-    setCard({name, link}){
-      return this._request(`${this._url}/cards`, {
+    setCard({
+      country,
+      director,
+      duration,
+      year,
+      description,
+      image,
+      trailerLink,
+      id,
+      nameRU,
+      nameEN,
+    }){
+      return this._request(`${this._url}/movies`, {
         method: 'POST',
         credentials: 'include',
         headers: this._headers,
         body: JSON.stringify({
-          name,
-          link
+          country,
+          director,
+          duration,
+          year,
+          description,
+          image: `https://api.nomoreparties.co${image.url}`,
+          trailerLink,
+          thumbnail: `https://api.nomoreparties.co${image.formats.thumbnail.url}`,
+          movieId: id,
+          nameRU,
+          nameEN,
         })
       })
     }
   
     deleteCard(cardId){
-      return this._request(`${this._url}/cards/${cardId}`, {
+      return this._request(`${this._url}/movies/${cardId}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: this._headers

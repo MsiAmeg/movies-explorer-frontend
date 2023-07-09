@@ -5,6 +5,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUser.js';
 import { CardsContext } from '../../contexts/Cards.js';
 import authApi from '../../utils/AuthApi.js';
 import mainApi from '../../utils/MainApi.js';
+import moviesApi from '../../utils/MoviesApi.js';
 import Main from '../Main/Main.js';
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/SavedMovies.js';
@@ -17,26 +18,48 @@ import './App.css';
 
 function App () {
 
-
-    
     
     const [loggedIn, setLoggedIn] = useState(false);
     const [currentUser, setCurrentUser] = useState({ name: '', email: '', _id: '', });
+
+
     const [cards, setCards] = useState([]);
+    const [filteredCards, setFilteredCards] = useState([]);
+    const [savedCards, setSavedCards] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
     useEffect(() => {
         tokenCheck();
         if (loggedIn) {
-            mainApi.getUserData()
-                .then(res => {
-                    const { name, email, _id } = res.data;
-                    setCurrentUser({name, email, _id})
+            const userPromise = mainApi.getUserData();
+            const moviesPromise = moviesApi.getInitialMovies();
+            const savedMoviesPromise = mainApi.getInitialMovies();
+
+
+            Promise.all([userPromise, moviesPromise, savedMoviesPromise])
+                .then(([userPromise, moviesPromise, savedMoviesPromise]) => {
+                    const { name, email, _id } = userPromise.data;
+                    setCurrentUser({name, email, _id});
+
+                    console.log(moviesPromise);
+                    setCards(moviesPromise);
+
+                    
+                    setSavedCards(savedMoviesPromise.data);
+
                     navigate('/movies', {replace: true});
+                })
+                .catch((err) => {
+                    console.log(err);
                 })
         }
     }, [loggedIn]);
+
+    useEffect(() => {
+        console.log(filteredCards);
+    }, [filteredCards]);
 
     
     const userLoggined = () => {
@@ -111,12 +134,57 @@ function App () {
           .catch((err) => {
             console.log(err);
           });
-      };
+    };
 
+
+    const isCardLiked = (id) => {
+        let isLiked = false;
+        savedCards.forEach(movie => {
+            if (movie.movieId === id) {
+                isLiked = true;
+            }
+        });
+        return isLiked;
+    };
+
+
+    const handleCardDelete = (movieId) => {
+        mainApi.deleteCard(movieId)
+            .then((newCard) => {
+                console.log(newCard);
+                setSavedCards((prevState) => prevState.filter((prevCard) => prevCard._id !== movieId));
+                setFilteredCards((prevState) => prevState.map((prevCard) => prevCard.id === movieId ? newCard.data : prevCard));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    const handleCardLike = (localMovie, isLiked) => {
+    
+        if (isLiked) {
+            savedCards.forEach(movie => {
+                if (movie.movieId === localMovie.id) {
+                    handleCardDelete(movie._id);
+                }
+            });
+        }
+        else {
+            mainApi.setCard(localMovie)
+                .then((res) => {
+                    const Card = res.data;
+                    setSavedCards([...savedCards, Card]);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    }
+    
     return (
         <LoginContext.Provider value={{loggedIn, userLoggined, signOut}}>
             <CurrentUserContext.Provider value={currentUser}>
-                <CardsContext.Provider value={cards}>
+                <CardsContext.Provider value={{cards, filteredCards, setFilteredCards, savedCards, setSavedCards, isLoading, setIsLoading, isCardLiked, handleCardDelete, handleCardLike}}>
                     <div className='container'>
                         <Routes>
                             <Route path='/' element={<Main />} />
