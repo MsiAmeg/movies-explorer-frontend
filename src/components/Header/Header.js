@@ -10,7 +10,7 @@ function Header() {
 
   const [isExtended, setExtended] = useState(false);
 
-  const { loggedIn, userLoggined, signOut } = useContext(LoginContext);
+  const { loggedIn, userLoggined } = useContext(LoginContext);
 
   const menuToggle = () => {
     setExtended(!isExtended);

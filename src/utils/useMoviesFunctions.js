@@ -25,7 +25,6 @@ export const useMoviesFunctions = () => {
     setTotalCards(_tempMovies.length);
   };
 
-
   const findSavedMovies = (serchString, shortEnabled) => {
     _resetSearch();
     setShowedSavedCards([]);
@@ -44,20 +43,27 @@ export const useMoviesFunctions = () => {
   };
 
   const showFirstMovies = (_tempMovies) => {
+    let _tempMassive = [];
     if (_tempMovies.length === 0) {
       setIsEmpty(true);
       setShowedCardsCount(0);
     }
     else if (_tempMovies.length <= loadCards.firstLoad) {
+      _tempMassive = _tempMovies;
       setShowedCards(_tempMovies);
       setShowedCardsCount(_tempMovies.length);
     }
     else {
       for (let i = 0; i < loadCards.firstLoad; i++) {
+        _tempMassive[i] = _tempMovies[i];
         setShowedCards(cards => cards.concat(_tempMovies[i]));
         setShowedCardsCount(loadCards.firstLoad);
       }
     }
+    localStorage.setItem('movies', JSON.stringify({
+      showedMovies: _tempMassive,
+      totalMovies: _tempMovies
+    }));
   };
 
   const showFirstSavedMovies = (_tempMovies) => {

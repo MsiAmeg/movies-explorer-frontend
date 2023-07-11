@@ -18,7 +18,7 @@ function SearchForm({ isSaved }) {
 
   useEffect(() => {
     const settings = JSON.parse(localStorage.getItem('settings'));
-    if (settings) {
+    if (settings && !isSaved) {
       setSearchSettings(settings);
     }
   }, []);
@@ -31,8 +31,8 @@ function SearchForm({ isSaved }) {
     }
     else {
       movies.findMovies(movieInput, shortsFilms);
+      saveSearchSettings();
     }
-    saveSearchSettings();
     validation.resetForm();
     cards.setIsLoading(false);
   };
@@ -61,6 +61,7 @@ function SearchForm({ isSaved }) {
   };
 
   const setSearchSettings = (settings) => {
+    console.log(settings);
     setMovieInput(settings.input);
     setShortsFilms(settings.checkbox);
   };

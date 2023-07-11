@@ -99,6 +99,23 @@ function App() {
     setInformationPopup({ isOpen: false, success: false, text: '' });
   };
 
+  const loadLocalCards = () => {
+    const movies = JSON.parse(localStorage.getItem('movies'));
+    if (movies) {
+      mainApi.getInitialMovies()
+        .then((res) => {
+          setSavedCards(res.data);
+          setShowedCards(movies.showedMovies);
+          setFilteredCards(movies.totalMovies);
+          setShowedCardsCount(movies.showedMovies.length);
+          setTotalCards(movies.totalMovies.length);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+  }
+
   const getSavedMovies = () => {
     mainApi.getInitialMovies()
       .then((res) => {
@@ -162,6 +179,8 @@ function App() {
   const signOutHandler = () => {
     authApi.signOut()
       .then(res => {
+        localStorage.removeItem('movies');
+        localStorage.removeItem('settings');
         setLoggedIn(false);
         setCurrentUser({ name: '', email: '', _id: '', });
         setInformationPopup({ isOpen: true, success: true, text: 'Выход успешно произведен!' });
@@ -289,7 +308,7 @@ function App() {
               <Route path='/' element={<Main />} />
               <Route path='/signin' element={<Login onLogin={handleLogin} />} />
               <Route path='/signup' element={<Register onRegister={handleRegister} />} />
-              <Route path='/movies' element={<ProtectedRoute element={Movies}></ProtectedRoute>} />
+              <Route path='/movies' element={<ProtectedRoute element={Movies} loadLocalCards={loadLocalCards}></ProtectedRoute>} />
               <Route path='/saved-movies' element={<ProtectedRoute element={SavedMovies} getSavedMovies={getSavedMovies}></ProtectedRoute>} />
               <Route path='/profile' element={<ProtectedRoute element={Profile} onUpdateUser={handleUpdateUser}></ProtectedRoute>} />
               <Route path='*' element={<PageNotFound />} />
