@@ -87,5 +87,5 @@ export const useMoviesFunctions = () => {
     setIsEmpty(false);
   }
 
-  return { findMovies, findSavedMovies };
+  return { findMovies, findSavedMovies, showFirstSavedMovies };
 };
