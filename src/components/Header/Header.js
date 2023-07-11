@@ -72,7 +72,7 @@ function Header() {
   }
   else {
     return (
-      <LandingHeader />
+      <LandingHeader logoHandler={goLanding} />
     );
   }
 };
