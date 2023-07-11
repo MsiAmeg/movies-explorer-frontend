@@ -92,8 +92,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  // url: "https://api.rekunir.frontend.nomoredomains.rocks",
-  url: "http://localhost:3001",
+  // url: "http://localhost:3001",
+  url: "https://api.rekunir.frontend.nomoredomains.rocks",
   headers: {
     'Content-Type': 'application/json',
   },
