@@ -4,18 +4,18 @@ import SearchForm from '../SearchForm/SearchForm.js';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 import './Movies.css';
 
-function Movies () {
+function Movies() {
 
-    return (
-        <>
-            <Header />
-            <main className='movies'>
-                <SearchForm />
-                <MoviesCardList isSaved={false} />
-            </main>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <main className='movies'>
+        <SearchForm isSaved={false} />
+        <MoviesCardList isSaved={false} />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Movies;

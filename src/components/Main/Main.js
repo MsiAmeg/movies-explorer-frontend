@@ -7,20 +7,20 @@ import Portfolio from '../Portfolio/Portfolio.js';
 import Footer from '../Footer/Footer.js';
 import './Main.css';
 
-function Main () {
-    return (
-        <>
-            <Header />
-            <main className='main'>
-                <Promo />
-                <About />
-                <Techs />
-                <AboutMe />
-                <Portfolio />
-            </main>
-            <Footer />
-        </>
-    );
+function Main() {
+  return (
+    <>
+      <Header />
+      <main className='main'>
+        <Promo />
+        <About />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Main;
