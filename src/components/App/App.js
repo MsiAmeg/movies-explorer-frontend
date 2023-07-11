@@ -64,7 +64,6 @@ function App() {
           navigate('/movies', { replace: true });
         })
         .catch((err) => {
-          setInformationPopup({ isOpen: true, success: false, text: 'Что-то пошло не так! Попробуйте ещё раз.' });
           console.log(err);
         })
     }
@@ -120,7 +119,6 @@ function App() {
         setLoggedIn(true);
       })
       .catch((err) => {
-        setInformationPopup({ isOpen: true, success: false, text: 'Что-то пошло не так! Попробуйте ещё раз.' });
         console.log(err);
         setLoggedIn(false);
       });
@@ -161,9 +159,17 @@ function App() {
       });
   };
 
-  const signOut = () => {
-    setLoggedIn(false);
-    setCurrentUser({ name: '', email: '', _id: '', });
+  const signOutHandler = () => {
+    authApi.signOut()
+      .then(res => {
+        setLoggedIn(false);
+        setCurrentUser({ name: '', email: '', _id: '', });
+        setInformationPopup({ isOpen: true, success: true, text: 'Выход успешно произведен!' });
+      })
+      .catch(err => {
+        console.log(err);
+        setInformationPopup({ isOpen: true, success: false, text: 'Что-то пошло не так! Попробуйте ещё раз.' });
+      });
   };
 
 
@@ -268,7 +274,7 @@ function App() {
   };
 
   return (
-    <LoginContext.Provider value={{ loggedIn, userLoggined, signOut }}>
+    <LoginContext.Provider value={{ loggedIn, userLoggined, signOutHandler }}>
       <CurrentUserContext.Provider value={currentUser}>
         <CardsContext.Provider value={{
           cards, filteredCards, setFilteredCards, savedCards, setSavedCards,

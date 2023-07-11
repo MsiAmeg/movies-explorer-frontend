@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUser.js';
 import { useFormValidation } from '../../utils/useFormValidation';
 import Header from '../Header/Header.js';
@@ -61,11 +60,9 @@ function Profile({ onUpdateUser }) {
             Редактировать
           </button>}
         </form>
-        {!isEdited && <Link to="https://api.rekunir.diplom.nomoredomains.rocks/users/me/signout"
-          className='profile__link-logout hover'
-          aria-label='выйти из аккаунта'>
+        {!isEdited && <button className='profile__button-logout hover' aria-label='выйти из аккаунта' onClick={currentUser.signOutHandler}>
           Выйти из аккаунта
-        </Link>}
+        </button>}
       </main>
     </>
   );
