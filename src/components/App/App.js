@@ -120,6 +120,7 @@ function App() {
         setLoggedIn(true);
       })
       .catch((err) => {
+        setInformationPopup({ isOpen: true, success: false, text: 'Что-то пошло не так! Попробуйте ещё раз.' });
         console.log(err);
         setLoggedIn(false);
       });
@@ -206,6 +207,7 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setInformationPopup({ isOpen: true, success: false, text: 'При удалении что-то пошло не так!' });
       });
   }
 
@@ -226,6 +228,7 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
+          setInformationPopup({ isOpen: true, success: false, text: 'При добавлении что-то пошло не так!' });
         });
     }
   }

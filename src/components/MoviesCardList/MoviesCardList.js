@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { CardsContext } from '../../contexts/Cards.js';
-import { useMoviesFunctions } from '../../utils/useMoviesFunctions.js';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 import Preloader from '../Preloader/Preloader.js';
 import './MoviesCardList.css';
