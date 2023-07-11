@@ -165,6 +165,7 @@ function App() {
         setLoggedIn(false);
         setCurrentUser({ name: '', email: '', _id: '', });
         setInformationPopup({ isOpen: true, success: true, text: 'Выход успешно произведен!' });
+        navigate('/', { replace: true });
       })
       .catch(err => {
         console.log(err);

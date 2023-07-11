@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUser.js';
+import { LoginContext } from '../../contexts/Login.js';
 import { useFormValidation } from '../../utils/useFormValidation';
 import Header from '../Header/Header.js';
 import './Profile.css';
@@ -9,6 +10,7 @@ function Profile({ onUpdateUser }) {
   const [isEdited, setIsEdited] = useState(false);
 
   const currentUser = useContext(CurrentUserContext);
+  const { signOutHandler } = useContext(LoginContext);
   const validation = useFormValidation();
 
   const editForm = () => {
@@ -60,7 +62,7 @@ function Profile({ onUpdateUser }) {
             Редактировать
           </button>}
         </form>
-        {!isEdited && <button className='profile__button-logout hover' aria-label='выйти из аккаунта' onClick={currentUser.signOutHandler}>
+        {!isEdited && <button className='profile__button-logout hover' aria-label='выйти из аккаунта' onClick={signOutHandler}>
           Выйти из аккаунта
         </button>}
       </main>
