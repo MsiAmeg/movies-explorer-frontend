@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { CardsContext } from '../contexts/Cards.js';
-import { logRoles } from '@testing-library/react';
 
 export const useMoviesFunctions = () => {
 
@@ -74,7 +73,7 @@ export const useMoviesFunctions = () => {
     }
     else if (_tempMovies.length <= loadCards.firstLoad) {
       setShowedSavedCards(_tempMovies);
-      setShowedCardsCount(_tempMovies.length);
+      setShowedSavedCardsCount(_tempMovies.length);
     }
     else {
       for (let i = 0; i < loadCards.firstLoad; i++) {

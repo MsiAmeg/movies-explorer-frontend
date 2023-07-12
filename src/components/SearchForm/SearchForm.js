@@ -61,7 +61,6 @@ function SearchForm({ isSaved }) {
   };
 
   const setSearchSettings = (settings) => {
-    console.log(settings);
     setMovieInput(settings.input);
     setShortsFilms(settings.checkbox);
   };
