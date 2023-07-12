@@ -181,6 +181,18 @@ function App() {
       .then(res => {
         localStorage.removeItem('movies');
         localStorage.removeItem('settings');
+        setCards([]);
+        setFilteredCards([]);
+        setSavedCards([]);
+        setSavedfilteredCards([]);
+        setIsLoading(false);
+        setIsEmpty(false);
+        setShowedCards([]);
+        setTotalCards(0);
+        setShowedCardsCount(0);
+        setShowedSavedCards([]);
+        setTotalSavedCards(0);
+        setShowedSavedCardsCount(0);
         setLoggedIn(false);
         setCurrentUser({ name: '', email: '', _id: '', });
         setInformationPopup({ isOpen: true, success: true, text: 'Выход успешно произведен!' });
