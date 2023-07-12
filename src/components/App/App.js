@@ -279,7 +279,7 @@ function App() {
   const loadMoreSavedCards = () => {
     let showedCount = showedSavedCards.length;
     const _tempCards = [];
-    if (showedCardsCount < totalSavedCards) {
+    if (showedSavedCardsCount < totalSavedCards) {
       if (totalSavedCards <= (showedSavedCardsCount + loadCards.moreBtnLoad)) {
         setShowedSavedCards(savedfilteredCards);
       }

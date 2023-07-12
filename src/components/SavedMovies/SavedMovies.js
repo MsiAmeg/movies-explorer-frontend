@@ -10,12 +10,12 @@ import './SavedMovies.css';
 function SavedMovies({ getSavedMovies }) {
 
   const { savedCards, setSavedfilteredCards } = useContext(CardsContext);
-  const { showFirstSavedMovies } = useMoviesFunctions();
+  const { findSavedMovies } = useMoviesFunctions();
 
   useEffect(() => {
     getSavedMovies();
     setSavedfilteredCards(savedCards);
-    showFirstSavedMovies(savedCards);
+    findSavedMovies('', true);
   }, []);
 
   return (

@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { CardsContext } from '../contexts/Cards.js';
+import { logRoles } from '@testing-library/react';
 
 export const useMoviesFunctions = () => {
 
   const { cards, setFilteredCards, savedCards, setSavedfilteredCards,
-    setTotalCards, setShowedCards, setShowedSavedCards, setShowedCardsCount,
-    setIsEmpty, loadCards } = useContext(CardsContext);
+    setTotalCards, setTotalSavedCards, setShowedCards, setShowedSavedCards, setShowedCardsCount,
+    setShowedSavedCardsCount, setIsEmpty, loadCards } = useContext(CardsContext);
 
 
   const findMovies = (serchString, shortEnabled) => {
@@ -39,7 +40,7 @@ export const useMoviesFunctions = () => {
     showFirstSavedMovies(_tempMovies);
 
     setSavedfilteredCards(_tempMovies);
-    setTotalCards(_tempMovies.length);
+    setTotalSavedCards(_tempMovies.length);
   };
 
   const showFirstMovies = (_tempMovies) => {
@@ -78,7 +79,7 @@ export const useMoviesFunctions = () => {
     else {
       for (let i = 0; i < loadCards.firstLoad; i++) {
         setShowedSavedCards(cards => cards.concat(_tempMovies[i]));
-        setShowedCardsCount(loadCards.firstLoad);
+        setShowedSavedCardsCount(loadCards.firstLoad);
       }
     }
   };

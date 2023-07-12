@@ -13,14 +13,15 @@ function MoviesCardList({ isSaved }) {
 
   const moreBtnHandler = () => {
     setIsLoading(true);
-    if (isSaved) {
-      setShowedSavedCardsCount(showedSavedCardsCount + loadCards.moreBtnLoad);
-      loadMoreSavedCards();
-    }
-    else {
-      setShowedCardsCount(showedCardsCount + loadCards.moreBtnLoad);
-      loadMoreCards();
-    }
+    setShowedCardsCount(showedCardsCount + loadCards.moreBtnLoad);
+    loadMoreCards();
+    setIsLoading(false);
+  };
+
+  const moreBtnHandlerSaved = () => {
+    setIsLoading(true);
+    setShowedSavedCardsCount(showedSavedCardsCount + loadCards.moreBtnLoad);
+    loadMoreSavedCards();
     setIsLoading(false);
   };
 
@@ -58,7 +59,7 @@ function MoviesCardList({ isSaved }) {
       {isEmpty && <h3 className='movies-card-list__empty-title'>По вашему запросу ничего не найдено!</h3>}
       {isSaved && <div className={`movies-card-list__more-films ${showedSavedCardsCount >= totalSavedCards ? "movies-card-list__more-films_ended" : ""}`}>
         <button className='movies-card-list__button hover'
-          aria-label='загрузить еще' onClick={moreBtnHandler} type='button'>Ещё</button>
+          aria-label='загрузить еще' onClick={moreBtnHandlerSaved} type='button'>Ещё</button>
       </div>}
       {!isSaved && <div className={`movies-card-list__more-films ${showedCardsCount >= totalCards ? "movies-card-list__more-films_ended" : ""}`}>
         <button className='movies-card-list__button hover'
