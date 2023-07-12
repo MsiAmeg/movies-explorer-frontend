@@ -60,8 +60,6 @@ function App() {
 
           setCards(moviesPromise);
           getSavedMovies();
-
-          navigate('/movies', { replace: true });
         })
         .catch((err) => {
           console.log(err);
