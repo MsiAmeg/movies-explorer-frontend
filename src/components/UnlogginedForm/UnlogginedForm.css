@@ -1,108 +1,116 @@
 .unloggined {
-    margin: 0 0 17px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    min-height: 379px;
-    gap: 14px;
+  margin: 0 0 17px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  min-height: 379px;
+  gap: 14px;
 }
 
 .unloggined__label {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    color: #8B8B8B;
-    font-size: 10px;
-    min-width: 396px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #8B8B8B;
+  font-size: 10px;
+  min-width: 396px;
 }
 
 .unloggined__input {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0 0 10px;
-    padding: 6px 0 10px;
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-bottom: 1px solid #8B8B8B;
-    background: transparent;
-    outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 6px 0 10px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #8B8B8B;
+  background: transparent;
+  outline: none;
 }
 
 .unloggined__input:focus-visible {
-    border-bottom: 1px solid #4285F4;
-    color: #EE3465;
+  border-bottom: 1px solid #4285F4;
+  color: #EE3465;
 }
 
 
 .unloggined__input:invalid {
-    color: #EE3465;
+  color: #EE3465;
 }
 
 .unloggined__input:valid {
-    color: #4285F4;
+  color: #4285F4;
 }
 
 .unloggined__error {
-    display: none;
-    margin: 0;
-    padding: 0;
-    color: #EE3465;
-    font-size: 10px;
+  display: none;
+  margin: 0;
+  padding: 0;
+  color: #EE3465;
+  font-size: 10px;
+  max-width: 369px;
 }
 
-.unloggined__input:invalid + .unloggined__error_visible {
-    display: block;
+.unloggined__input:invalid+.unloggined__error {
+  display: block;
 }
 
 .unloggined__button {
-    margin: auto 0 0;
-    padding: 14px 0 15px;
-    width: 38.6%;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 3px;
-    background: #4285F4;
-    border: none;
+  margin: auto 0 0;
+  padding: 14px 0 15px;
+  width: 38.6%;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+  background: #4285F4;
+  border: none;
 }
 
 .unloggined__button:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.unloggined__button:disabled {
+  background: #868b95;
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 1024px) {
-    .unloggined {
-        min-height: 378px;
-    }
-    .unloggined__button {
-        width: 64.7%;
-    }
+  .unloggined {
+    min-height: 378px;
+  }
+
+  .unloggined__button {
+    width: 64.7%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .unloggined {
-        margin: 0 0 15px;
-        min-height: 467px;
-    }
+  .unloggined {
+    margin: 0 0 15px;
+    min-height: 467px;
+  }
 
-    .unloggined__label {
-        min-width: 260px;
-    }
-    .unloggined__form {
-        margin: 0 0 15px;
-        max-width: 260px;
-        min-height: 468px;
-    }
+  .unloggined__label {
+    min-width: 260px;
+  }
 
-    .unloggined__button {
-        width: 100%;
-        padding: 16px 0 15px;
-        font-size: 12px;
-        justify-self: flex-end;
-    }
+  .unloggined__form {
+    margin: 0 0 15px;
+    max-width: 260px;
+    min-height: 468px;
+  }
+
+  .unloggined__button {
+    width: 100%;
+    padding: 16px 0 15px;
+    font-size: 12px;
+    justify-self: flex-end;
+  }
 }

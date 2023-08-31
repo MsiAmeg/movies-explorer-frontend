@@ -1,126 +1,143 @@
 .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 75px 0 70px;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 75px 0 70px;
+  flex-grow: 1;
 }
 
 .profile__title {
-    margin: 0 0 122px;
-    padding: 0;
-    color: white;
-    font-size: 24px;
-    font-weight: 500;
-    text-align: center;
+  margin: 0 0 122px;
+  padding: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .profile__form {
-    margin: 0 0 17px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    min-width: 410px;
-    color: white;
-    font-size: 11px;
-    font-weight: 500;
+  margin: 0 0 17px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 410px;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .profile__label {
-    margin: 0;
-    padding: 0 0 13px 0;
-    box-sizing: border-box;
-    border-bottom: 1px solid #424242;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  margin: 0;
+  padding: 0 0 13px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #424242;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .profile__label:last-of-type {
-    border-bottom: none;
-    padding: 0;
+  border-bottom: none;
+  padding: 0;
 }
 
 .profile__input {
-    margin: 0;
-    padding: 3px 0 3px;
-    text-align: end;
-    background: transparent;
-    border: none;
-    color: white;
-    min-width: 80%;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 3px 0 3px;
+  text-align: end;
+  background: transparent;
+  border: none;
+  color: white;
+  min-width: 80%;
+  box-sizing: border-box;
 }
 
 .profile__input:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .profile__buttons {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile__button {
-    margin: 203px 0 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 13px;
-    cursor: pointer;
+  margin: 203px 0 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
 }
 
-.profile__link-logout {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-size: 13px;
-    color: #EE3465;
+.profile__button_submit {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px;
+  background: #3456F3;
+  border-radius: 3px;
+}
+
+.profile__button_submit:disabled {
+  background: #868b95;
+  cursor: not-allowed;
+}
+
+.profile__button-logout {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-size: 13px;
+  color: #EE3465;
+  cursor: pointer;
 }
 
 .profile__input:focus-visible {
-    outline: none;
+  outline: none;
 }
 
 @media screen and (max-width: 1024px) {
-    .profile {
-        margin: 236px 0 269px;
-    }
+  .profile {
+    margin: 236px 0 269px;
+  }
 
-    .profile__title {
-        margin: 0 0 95px;
-    }
+  .profile__title {
+    margin: 0 0 95px;
+  }
 
-    .profile__button {
-        margin: 194px 0 0;
-    }
+  .profile__button {
+    margin: 194px 0 0;
+  }
 }
 
 @media screen and (max-width: 540px) {
-    .profile {
-        margin: 70px 0 40px;
-    }
+  .profile {
+    margin: 70px 0 40px;
+  }
 
-    .profile__title {
-        margin: 0 0 80px;
-    }
+  .profile__title {
+    margin: 0 0 80px;
+  }
 
-    .profile__form {
-        min-width: 260px;
-    }
+  .profile__form {
+    min-width: 260px;
+  }
 
-    .profile__button {
-        margin: 362px 0 0;
-    }
+  .profile__button {
+    margin: 362px 0 0;
+  }
 
-    .profile__button, .profile__link-logout {
-        font-size: 12px;
-    }
+  .profile__button,
+  .profile__button-logout {
+    font-size: 12px;
+  }
 }
