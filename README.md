@@ -1,6 +1,22 @@
 # movies-explorer-frontend
-## Frontend Diploma Yandex Practicum
-![Preview](https://github-production-user-asset-6210df.s3.amazonaws.com/99011044/249772743-6959b805-216a-48fa-a4bf-6e559debcd87.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230629%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230629T124039Z&X-Amz-Expires=300&X-Amz-Signature=a3a279423edb1c8602ef8199dc68dca58498fbd0362933e8538d506ebfa9f9c6&X-Amz-SignedHeaders=host&actor_id=99011044&key_id=0&repo_id=611870911)
+![image](https://github.com/MsiAmeg/mesto/assets/99011044/558a51d5-65ec-488a-86c4-8480edaf07ab)
+## Описание:
+Front-End дипломной работы курса веб-разработчика от Яндекс.Практикум.
+## Стек
+![React](https://img.shields.io/badge/-React-61daf8?logo=react&logoColor=black)
+![HTML5](https://img.shields.io/badge/-HTML5-e34f26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572b6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-f7df1e?logo=javaScript&logoColor=black)
+![Webpack](https://img.shields.io/badge/-Webpack-99d6f8?logo=webpack&logoColor=black)
+![API](https://img.shields.io/badge/-api-black)
+![BEM](https://img.shields.io/badge/-BEM-black)
+
+## Запуск проекта:
+1. Клонировать репозиторий.
+2. Установить зависимости.
+3. Запустить проект.
+
+## Ссылки проекта
 ### [figma design](https://drive.google.com/file/d/1Hd0zmGA_4S4gycNjlnsTjy-o9gjwFURX/view?usp=sharing)
 ### [Pull Request](https://github.com/MsiAmeg/movies-explorer-frontend/pull/2)
 ### [Server Frontend](https://rekunir.diplom.nomoredomains.rocks/)
