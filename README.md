@@ -11,6 +11,10 @@ Front-End дипломной работы курса веб-разработчи
 ![API](https://img.shields.io/badge/-api-black?style=for-the-badge)
 ![BEM](https://img.shields.io/badge/-BEM-black?style=for-the-badge)
 
+## Статус:
+Планируются доработки:
+1. Создать hover карточек для демонстрации длинных названий.
+
 ## Запуск проекта:
 1. Клонировать репозиторий.
 2. Установить зависимости.
